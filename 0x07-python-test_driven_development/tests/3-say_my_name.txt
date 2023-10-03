@@ -1,0 +1,26 @@
+Import module:
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+# Example 1: Print the full name
+>>> say_my_name("Alice", "Johnson")
+My name is Alice Johnson
+
+# Example 2: Print only the first name
+>>> say_my_name("Sam")
+My name is Sam
+
+# Example 3: Empty last name
+>>> say_my_name("Mary", "")
+My name is Mary
+
+# Example 4: Numeric first name (TypeError)
+>>> say_my_name(123, "Doe")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string or last_name must be a string
+
+# Example 5: Numeric last name (TypeError)
+>>> say_my_name("Jane", 456)
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string or last_name must be a string
