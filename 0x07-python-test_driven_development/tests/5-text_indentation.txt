@@ -1,0 +1,42 @@
+Import module:
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+# Example 1: Text with periods, question marks, and colons
+>>> text_indentation("This is a sentence. It has multiple periods, question marks, and colons: What do you think?")
+This is a sentence.
+<BLANKLINE>
+It has multiple periods, question marks, and colons:
+<BLANKLINE>
+What do you think?
+
+# Example 2: Text with only periods
+>>> text_indentation("One. Two. Three.")
+One.
+<BLANKLINE>
+Two.
+<BLANKLINE>
+Three.
+
+# Example 3: Text with only question marks
+>>> text_indentation("What is this? Who are you? Where are we?")
+What is this?
+<BLANKLINE>
+Who are you?
+<BLANKLINE>
+Where are we?
+
+# Example 4: Text with only colons
+>>> text_indentation("First: Second: Third:")
+First:
+<BLANKLINE>
+Second:
+<BLANKLINE>
+Third:
+
+# Example 5: Text with a mix of punctuation
+>>> text_indentation("Hello! This is a test: How's it going? Goodbye.")
+Hello! This is a test:
+<BLANKLINE>
+How's it going?
+<BLANKLINE>
+Goodbye.
