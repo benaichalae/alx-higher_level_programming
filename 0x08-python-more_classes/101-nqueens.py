@@ -1,5 +1,18 @@
 #!/usr/bin/python3
-"""Solves the N-queens puzzle."""
+"""Solves the N-queens puzzle and finds all possible solutions.
+
+This program places N non-attacking queens on an NxN chessboard.
+
+Usage:
+    $ ./101-nqueens.py N
+
+N must be an integer greater than or equal to 4.
+
+Attributes:
+    board (list): A list of lists representing the chessboard.
+    solutions (list): A list of solutions, where each solution is represented
+        as a list of queen positions in the format [row, column].
+"""
 import sys
 
 
@@ -30,7 +43,16 @@ def get_solution(board):
 
 
 def xout(board, row, col):
-    """X out spots on a chessboard."""
+    """Mark unavailable spots on a chessboard after placing a queen.
+
+    Marks all spots where non-attacking queens can
+    no longer be placed with 'X'.
+
+    Args:
+        board (list): The current chessboard.
+        row (int): The row of the last placed queen.
+        col (int): The column of the last placed queen.
+    """
     for c in range(col + 1, len(board)):
         board[row][c] = "x"
 
