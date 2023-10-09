@@ -1,14 +1,21 @@
 Import module:
-	>>> MyList = __import__('1-my_list').MyList
+        >>> MyList = __import__('1-my_list').MyList
 
 Example:
         >>> my_list = MyList()
-	>>> my_list.append(1)
-	>>> my_list.append(4)
-	>>> my_list.append(2)
+        >>> my_list.append(10)
+        >>> my_list.append(2)
+        >>> my_list.append(7)
+        >>> my_list.append(1)
+        >>> my_list.append(5)
+        >>> print(my_list)
+	[10, 2, 7, 1, 5]
+        >>> my_list.print_sorted()
+	[1, 2, 5, 7, 10]
 	>>> my_list.append(3)
-	>>> my_list.append(5)
-	>>> print(my_list)
-	[1, 4, 2, 3, 5]
+	>>> my_list.append(6)
+	>>> my_list.append(4)
 	>>> my_list.print_sorted()
-	[1, 2, 3, 4, 5]
+	[1, 2, 3, 4, 5, 6, 7, 10]
+	>>> print(my_list)
+	[10, 2, 7, 1, 5, 3, 6, 4]
