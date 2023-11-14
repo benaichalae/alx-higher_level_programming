@@ -1,4 +1,4 @@
--- Import in hbtn_0c_0 database table dump
+-- script that displays the average temperature by city ordered by temperature.
 SELECT city, AVG(temperature) as avg_temp
 FROM temperature_data
 GROUP BY city
