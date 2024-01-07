@@ -1,17 +1,12 @@
 #!/usr/bin/python3
 """script that fetches https://alx-intranet.hbtn.io/status"""
-import urllib.request
-
-
-def fetcher():
-    """fetcher"""
-    with urllib.request.urlopen("https://intranet.hbtn.io/status") as response:
-        html = response.read()
-        print("Body response:")
-        print("\t- type: {}".format(type(html)))
-        print("\t- content: {}".format(html))
-        print("\t- utf8 content: {}".format(html.decode("utf-8")))
+import requests
+from sys import argv
 
 
 if __name__ == "__main__":
-    fetcher()
+    r = requests.get('https://swapi.co/api/people/?search={}'.format(argv[1]))
+    d = r.json()
+    print("Number of results: {}".format(d['count']))
+    for i in d['results']:
+        print(i['name'])
