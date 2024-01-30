@@ -8,7 +8,7 @@ request.get(apiUrl, (error, response, body) => {
     try {
       const films = JSON.parse(body).results;
       const filmsWithWedge = films.filter((film) =>
-        film.characters.includes('https://swapi-api.alx-tools.com/api/people/18/')
+        film.characters.includes('18')
       );
       console.log(filmsWithWedge.length);
     } catch (parseError) {
