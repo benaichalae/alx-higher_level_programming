@@ -1,18 +1,18 @@
 #!/usr/bin/node
 const request = require('request');
 const apiUrl = process.argv[2];
-request.get(apiUrl, (error, response, body) => {
+request(apiUrl, function (error, response, body) {
   if (error) {
     console.error(error);
-  } else {
-    try {
-      const films = JSON.parse(body).results;
-      const filmsWithWedge = films.filter((film) =>
-        film.characters.includes('18')
-      );
-      console.log(filmsWithWedge.length);
-    } catch (parseError) {
-      console.error('Error parsing API response:', parseError);
+    return;
+  }
+  let occurance = 0;
+  for (const film of JSON.parse(body).results) {
+    for (const character of film.characters) {
+      if (character.includes('18')) {
+        occurance = occurance + 1;
+      }
     }
   }
+  console.log(occurance);
 });
